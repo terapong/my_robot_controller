@@ -41,7 +41,7 @@ class TurtleControllerNode(Node):
     def call_set_pen_service(self, r, g, b, width, off):
         client = self.create_client(SetPen, "turtle1/set_pen")
         while not client.wait_for_service(1.0):
-            self.get_logger().warn("Waiting for service...")
+            self.get_logger().warn("TOTO Waiting for service...")
 
         request = SetPen.Request()
         request.r = r
