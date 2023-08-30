@@ -1,0 +1,29 @@
+/* net set up
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: yes
+      dhcp6: yes
+      optional: true
+  wifts:
+    wlan0:
+      dhcp4: yes
+      dhcp6: yes
+      access-points:
+        WIFI_SSID:
+        password: AEC261058  ///0843184768
+*/
+
+
+ros2 launch turtlebot3_bringup robot.launch.py
+ros2 topic list
+ros2 service list
+ros2 run turtlebot3_teleop teleop_keyboard
+ros2 launch turtlebot3_cartographer cartographer.launch.py
+
+
+ros2 run my_robot_controller test_node
+ros2 run my_robot_controller draw_circle
+ros2 run my_robot_controller pose_subscriber	

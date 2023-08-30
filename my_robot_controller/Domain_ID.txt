@@ -1,0 +1,44 @@
+ros2 run turtlesim turtlesim_node
+ros2 run turtlesim turtle_teleop_key
+
+
+///colcon build tool มันคือ อาราย
+////ประมาณ ว่า ลองเขียนโปรแกรม python แล้ว run ด้าย ros2 run 
+/// colcon build --symlink-install
+///ros2 pkg create hello_world --build-type ament_cmake --dependencies rclcpp
+///ament_cmake เขียนด้วย ภาษา C จะมี ament_python ด้วย
+///dependencies จะใช้ lib อะไรบ้างตอนเริ่มต้น อันนี้ใช้ rclcpp
+
+///ให้เลือกว่าจะเอา C หรือ python 
+src>ros2 pkg create my_robot_controller --build-type ament_python --dependencies rclpy
+///คือการเอา โปรแกรมที่เขียนเสร็จเข้า ros2 เพื่อ run
+colcon build --symlink-install
+
+source ~/.bashrc
+
+ros2 run my_robot_controller test_node
+ros2 run my_robot_controller draw_circle
+ros2 run my_robot_controller pose_subscriber	
+
+
+//อีก terminal หนึ่ง
+pip3 list | grep setuptools  ///setuptools  59.6.0
+pip3 install setuptools==58.2.0
+
+//แบบว่า Team ทีทำ ROS2 ใช่ ภาษา C++ & Python แต่ถ้าจะใช้ ภาษาอื่น ต้อง เขียนเองแต่มี lib ให้ใช้ เกือบทุกภาษา เช่น JAVA 55555
+
+Domain ID ///ต้องหาก่อน แล้วเอาไปใส่ใน .bashrc
+ID ต้องหา ID unsigned 16-bit integer. น่ะ ต้องอยู่ประมาณ นี้ domain IDs 0-101 and 215-232
+///Domain ID to UDP Port Calculator
+Domain ID: 0
+Participant ID: 0
+
+///Different ROS 2 middleware vendors (RMW) กูใช้ Eclipse น่ะ ถ้าไม่มีมันจะใช้ Abache  น่ะ
+
+///Logging and logger configuration API แม่่ม มีแต่ C++ & Python ต้องหา JAVA มาดูแล้ว https://github.com/ros2-java/ros2_java
+
+///Quality of Service settings ต้องมาดู  Quality of Service (QoS) อีก กำๆๆๆ มุนคือการ แบ่ง resorce แค่นั้นเองใครใช้ บ้างได้เท่าไหร่ เยอะ น้อย
+
+///Overview and usage of RQt is a graphical user interface framework 
+
+///Internal API Architecture Overview ข้างล้างเป็น C ข้างบน เป็น C++, Python, JAVA, ....
